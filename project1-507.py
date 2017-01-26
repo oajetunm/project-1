@@ -8,9 +8,29 @@ import math
 #     palidrome('abcdef')  returns 'False'
 #     palidrome('')  returns 'True'
 
-def palindrome(word):
- ### Your code goes here
-  print('Fill in code for palindrome')
+def palindrome(s):
+
+
+    def removeWhite(s):
+        if len(s) <=1:
+            if s[0] == ' ':
+                return ''
+            elif s[0] == "'":
+                return s[0]
+            else:
+                return s[0]
+        else:
+                return removeWhite(s[0]) + removeWhite(s[1:])
+    def reverse(s):
+        if len(s) <= 1:
+            return s
+        else:
+            return reverse(s[-1]) + reverse(s[:-1])
+
+    if s== reverse(s):
+        return True
+    else:
+        return False
 
 
   # return '' ### Replace with your code
@@ -30,7 +50,7 @@ def main():
   total = 0;
   print()
   print ('Task C: palindromes' """Each OK is worth five points.""")
- 
+
  #  """ If this is what you get, you are good to go. Each OK is worth five points.
  # OK  Got:  True Expected:  True
  # OK  Got:  False Expected:  False
